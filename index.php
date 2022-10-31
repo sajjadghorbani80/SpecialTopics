@@ -22,3 +22,13 @@
 </body>
 
 </html>
+
+<?php 
+include("mylibrary.php");
+?>
+
+<form>
+    <input type="submit" name="ok">
+</form>
+<?php
+if(isset($_GET['ok']))
