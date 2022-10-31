@@ -1,10 +1,10 @@
 let Plan = [];
 // let times = ["10-8","12-10","14-12","18-16"];
 let day = ["شنبه","یکشنبه","دوشنبه","سه شنبه","چهارشنبه","پنجشنبه","جمعه"];
-let id = times.length * day.length;
 function createColumns()  {
-    document.getElementById("table").innerHTML = "";
-    let input = document.getElementById("1").value;
+    var input = document.getElementById("number").value;
+    let id = input * day.length;
+    document.getElementById("shift").innerHTML = "";
     let hoursHtml = `<thead><tr><th></th>`
     for (let m = 0; m < input; m++) {
         hoursHtml += `<th>${m+1}</th>`
