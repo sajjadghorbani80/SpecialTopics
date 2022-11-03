@@ -27,7 +27,7 @@ function createColumns()  {
     }
     
     document.getElementsByTagName("table")[0].innerHTML +=string+`<tr></tbody>`;
-    
+   // document.getElementById("output").value= JSON.stringify(GetData());
 }
 
 
@@ -59,6 +59,38 @@ function GetData(){
             
         }
     }
+    document.getElementById("output").value= JSON.stringify(ExportData);
+   return JSON.stringify(ExportData);
+}
 
-    alert( JSON.stringify(ExportData) )
+function SetData(data){
+    //let data = str;
+    let options = ["آقایان","بانوان","تعطیل"];
+    
+    var input = data[0].length;
+    let id = input * data.length;
+    document.getElementById("shift").innerHTML = "";
+    let hoursHtml = `<thead><tr><th></th>`
+    for (let m = 0; m < input; m++) {
+        hoursHtml += `<th>${m+1}</th>`
+        
+    }
+    document.getElementsByTagName("table")[0].innerHTML +=hoursHtml+`</tr></thead><tbody>`;
+    
+    let string ="";
+    for (let i = 0; i < data.length; i++) {
+        string+=`<tr><td>${day[i]}</td>`;
+       
+    let arr = [];
+        for (let j = 0; j < input; j++) {
+            arr.push(id);
+            string += `<td class="select"><button class="button" id=${id--} onclick=changeGender(${id + 1})>${options[data[i][j]]}</button></td>`;
+            
+            
+        }
+        Plan.push(arr)
+    }
+    
+    document.getElementsByTagName("table")[0].innerHTML +=string+`<tr></tbody>`;
+    document.getElementById("output").value= JSON.stringify(GetData());
 }

@@ -1,11 +1,11 @@
 <?php
-function dequery($q) {
-$L = mysqli_conect("http://127.0.0.1:5500","sa","Docker@123");
+function doquery($q) {
+$L = mysqli_connect("127.0.0.1:3306","root","","pool");
 if(!$L) 
     die("not connect");
 
-    $r= mysqli_query($L,$q);
-    if(!$r)
-        die("query didnt run");
-    return($r);
+$r= mysqli_query($L,$q);
+if(!$r)
+    die("query didnt run");
+return($r);
 }
