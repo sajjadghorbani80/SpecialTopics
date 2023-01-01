@@ -14,21 +14,18 @@ html {
 
 body {
   padding: 20px;
-  background-color: #5BB9B8;
+  background-color: #ebe7e5;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 1.6rem;
   font-family: iranyekan;
 }
 
-p {
-  text-align: center;
-  margin: 20px 0 60px;
-}
 
 main {
-  background-color: #2C3845;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 h1 {
@@ -46,6 +43,7 @@ tr, td, tbody {
 
 thead {
   display: none;
+  border-radius: 10px;
 }
 
 tr {
@@ -55,6 +53,8 @@ tr {
 td {
   padding: 10px 10px 0;
   text-align: center;
+  height: 5%;
+
 }
 td:before {
   content: attr(data-title);
@@ -67,21 +67,29 @@ td:before {
 
 table {
   width: 100%;
+  box-shadow:0 0 40px 0 rgba(0,0,0,.15);
+  border-radius: 10px;
 }
 
 th {
   text-align: center;
   font-weight: 700;
 }
+#shift th:last-child{
+  border-radius: 10px 0 0 0;
+}
+#shift th:first-child {
+  border-radius: 0 10px 0 0;
 
+ }
 thead th {
-  background-color: #202932;
+  background-color: #6C7AE0;
   color: #fff;
-  border: 1px solid #202932;
+  
 }
 
 
-.button {
+/* .button {
   line-height: 1;
   display: inline-block;
   font-size: 1.2rem;
@@ -91,12 +99,58 @@ thead th {
   color: #fff;
   padding: 8px;
   background-color: #4b908f;
-  width: 50%;
+  width: 100%;
+  height: 100%; 
+  
+} */
+
+/* CSS */
+a:link {
+  text-decoration: none;
+}
+a{
+  color: white;
+  width: 100%;
+  display: inline-block;
+}
+.button {
+  width: 100%;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: iranyekan;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.button:hover,
+.button:focus {
+  border-color: rgba(9, 155, 34, 0.959);
+  box-shadow: rgba(0, 0, 0, 0.349) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 .select {
   padding-bottom: 20px;
-  border-bottom: 1px solid #28333f;
+  /* border-bottom: 1px solid #28333f; */
 }
 .select:before {
   display: none;
@@ -134,26 +188,30 @@ thead th {
   }
 
 
-  td {
-    border: 1px solid #28333f;
-  }
   td:before {
     display: none;
   }
 
-  td, th {
+   th {
     padding: 10px;
   }
 
   tr:nth-child(2n+2) td {
-    background-color: #242e39;
+    background-color: #F8F6FF;
   }
 
   .select {
     padding: 10px;
   }
 }
-
+.float{
+  position:fixed;
+right: 5px;
+bottom: 5px;
+width: 75px;
+height: 35px;
+padding: 0;
+}
 @font-face {
   font-family: iranyekan;
 	font-style: normal;
